@@ -15,4 +15,3 @@ EXPOSE 5000
 # Run the app
 CMD ["python", "app.py"]
 
-#django
