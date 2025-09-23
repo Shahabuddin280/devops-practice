@@ -11,6 +11,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    networks:
+      - todo_network
 
   db:
     image: postgres:15
@@ -24,6 +26,12 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - todo_network
 
 volumes:
   postgres_data:
+
+networks:
+  todo_network:
+    driver: bridge
